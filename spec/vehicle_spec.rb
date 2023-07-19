@@ -13,13 +13,13 @@ RSpec.describe Vehicle do
     end
 
     it "has attributes" do 
-      expect(@vehicle.year).to eq(2001)
+      expect(@vehicle.year).to eq("2001")
       expect(@vehicle.make).to eq("Honda")
       expect(@vehicle.model).to eq("Civic")
     end
   end
 
-  describe "#adult?" do
+  describe "#speeding?" do
     xit "shows if passenger is an adult" do
       expect(@charlie.adult?).to eq(true)
       expect(@taylor.adult?).to eq(false)
