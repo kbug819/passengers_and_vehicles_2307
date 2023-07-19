@@ -22,13 +22,11 @@ class Vehicle
   end
 
   def num_adults
-    adult_pass = []
-    @passengers.each do |passenger|
-      if passenger.adult? == true
-        adult_pass << passenger
-      end
+    # adult_pass = []
+    @passengers.count do |passenger|
+      passenger.adult?
     end
-    adult_pass.count
+    
   end
 
 end

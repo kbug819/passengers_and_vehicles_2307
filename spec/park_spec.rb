@@ -85,7 +85,7 @@ RSpec.describe Park do
       @ford.add_passenger(@ron)
      
       # expect(@yosemite.revenue).to eq(175)
-      expect(@yosemite.track_revenue).to eq(175)
+      expect(@yosemite.revenue).to eq(175)
     end
   end
 
