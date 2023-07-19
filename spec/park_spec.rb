@@ -14,7 +14,13 @@ RSpec.describe Park do
 
     @charlie = Passenger.new({"name" => "Charlie", "age" => 18})   
     @jude = Passenger.new({"name" => "Jude", "age" => 20})    
-    @taylor = Passenger.new({"name" => "Taylor", "age" => 12})          
+    @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+  
+    @kaylee = Passenger.new({"name" => "Kaylee", "age" => 33})
+    @travis = Passenger.new({"name" => "Travis", "age" => 43})
+    @ron = Passenger.new({"name" => "Ron", "age" => 37})
+
+
   end
 
   describe "#initialize" do
@@ -48,6 +54,24 @@ RSpec.describe Park do
       expect(@yosemite.vehicles).to eq([@honda, @toyota, @ford])
     end
   end
+
+  describe "passengers" do
+    it "lists all passengers entering park" do
+      @yosemite.add_vehicle(@honda)
+      @yosemite.add_vehicle(@toyota)
+      @yosemite.add_vehicle(@ford)
+      @honda.add_passenger(@charlie)
+      @honda.add_passenger(@jude)
+      @honda.add_passenger(@taylor)
+      @toyota.add_passenger(@kaylee)
+      @toyota.add_passenger(@travis)
+      @ford.add_passenger(@ron)
+
+      expect(@yosemite.passengers).to eq([@charlie, @jude, @taylor, @kaylee, @travis, @ron])
+    end
+  end
+
+
 
       
 end

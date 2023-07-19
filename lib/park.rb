@@ -9,5 +9,13 @@ class Park
   def add_vehicle(new_vehicle)
     @vehicles << new_vehicle
   end
-  
+
+  def passengers
+    passenger_list = []
+    @vehicles.each do |vehicle|
+      passenger_list << vehicle.passengers
+    end
+    passenger_list.flatten
+  end
+
 end
