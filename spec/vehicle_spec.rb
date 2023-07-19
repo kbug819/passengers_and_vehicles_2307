@@ -20,9 +20,18 @@ RSpec.describe Vehicle do
   end
 
   describe "#speeding?" do
-    xit "shows if passenger is an adult" do
-      expect(@charlie.adult?).to eq(true)
-      expect(@taylor.adult?).to eq(false)
+    it "shows if vehicle is speeding" do
+      expect(@vehicle.speeding?).to eq(false)
+      @vehicle.speed
+      expect(@vehicle.speeding?).to eq(true)
+    end
+  end
+
+  describe "#speed" do
+    it "changes the vehicle to speeding" do
+      expect(@vehicle.speeding?).to eq(false)
+      @vehicle.speed
+      expect(@vehicle.speeding?).to eq(true)
     end
   end
 end
