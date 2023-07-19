@@ -71,6 +71,28 @@ RSpec.describe Park do
     end
   end
 
+  describe "revenue" do
+    it "tracks how much park has made" do
+      expect(@yosemite.revenue).to eq(0)
+      @yosemite.add_vehicle(@honda)
+      @yosemite.add_vehicle(@toyota)
+      @yosemite.add_vehicle(@ford)
+      @honda.add_passenger(@charlie)
+      @honda.add_passenger(@jude)
+      @honda.add_passenger(@taylor)
+      @toyota.add_passenger(@kaylee)
+      @toyota.add_passenger(@travis)
+      @ford.add_passenger(@ron)
+     
+      # expect(@yosemite.revenue).to eq(175)
+      expect(@yosemite.track_revenue).to eq(175)
+    end
+  end
+
+  # describe "#track_revenue" do
+  #   it "tracks revenue from each adult" do
+
+
 
 
       
