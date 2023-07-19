@@ -9,8 +9,8 @@ RSpec.describe Passenger do
 
   describe "#initialize" do
     it "instantiates a new object" do
-    expect(@charlie).to be_an_instance_of(Passenger)
-    expect(@taylor).to be_an_instance_of(Passenger)
+      expect(@charlie).to be_an_instance_of(Passenger)
+      expect(@taylor).to be_an_instance_of(Passenger)
     end
 
     it "has attributes" do 

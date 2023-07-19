@@ -12,7 +12,7 @@ RSpec.describe Vehicle do
 
   describe "#initialize" do
     it "instantiates a new object" do
-    expect(@vehicle).to be_an_instance_of(Vehicle)
+      expect(@vehicle).to be_an_instance_of(Vehicle)
     end
 
     it "has attributes" do 
