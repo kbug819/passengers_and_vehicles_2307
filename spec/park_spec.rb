@@ -7,7 +7,11 @@ RSpec.describe Park do
   before do
     @yosemite = Park.new("Yosemite National Park", 35)
     @canyonlands = Park.new("Canyonlands National Park", 30)
-    @vehicle = Vehicle.new("2001", "Honda", "Civic")  
+
+    @honda = Vehicle.new("2001", "Honda", "Civic")  
+    @toyota = Vehicle.new("2010", "Toyota", "Rav-4")
+    @ford = Vehicle.new("2011", "Ford", "Focus")
+
     @charlie = Passenger.new({"name" => "Charlie", "age" => 18})   
     @jude = Passenger.new({"name" => "Jude", "age" => 20})    
     @taylor = Passenger.new({"name" => "Taylor", "age" => 12})          
@@ -15,8 +19,8 @@ RSpec.describe Park do
 
   describe "#initialize" do
     it "instantiates a new object" do
-    expect(@yosemite).to be_an_instance_of(Park)
-    expect(@canyonlands).to be_an_instance_of(Park)
+      expect(@yosemite).to be_an_instance_of(Park)
+      expect(@canyonlands).to be_an_instance_of(Park)
     end
 
     it "has attributes" do 
@@ -26,4 +30,24 @@ RSpec.describe Park do
       expect(@canyonlands.admission_price).to eq(30)
     end
   end
+
+  describe "vehicles" do
+    it "holds a list of vehicles entering park" do
+      expect(@yosemite.vehicles).to eq([])
+      expect(@canyonlands.vehicles).to eq([])
+    end
+  end
+  
+  describe "add vehicles" do
+    it "adds a vehicle to the park list" do
+      expect(@yosemite.vehicles).to eq([])
+      expect(@canyonlands.vehicles).to eq([])
+      @yosemite.add_vehicle(@honda)
+      @yosemite.add_vehicle(@toyota)
+      @yosemite.add_vehicle(@ford)
+      expect(@yosemite.vehicles).to eq([@honda, @toyota, @ford])
+    end
+  end
+
+      
 end
